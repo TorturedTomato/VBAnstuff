@@ -1,0 +1,45 @@
+Sub weekly()
+    With ActiveSheet.Shapes("weekly").Fill
+        .Visible = msoTrue
+        .ForeColor.ObjectThemeColor = msoThemeColorAccent1
+        .ForeColor.Brightness = -0.5
+    End With
+    With ActiveSheet.Shapes("daily").Fill
+        .Visible = msoFalse
+    End With
+        With ActiveSheet.Shapes("monthly").Fill
+        .Visible = msoFalse
+    End With
+        ActiveSheet.PivotTables("Tableau croisé dynamique1").PivotFields("Time").CurrentPage = "weekly"
+        ActiveSheet.Shapes("TextBox 7").TextFrame2.TextRange.Font.Fill.ForeColor.ObjectThemeColor = msoThemeColorAccent1
+End Sub
+Sub daily()
+    With ActiveSheet.Shapes("daily").Fill
+        .Visible = msoTrue
+        .ForeColor.ObjectThemeColor = msoThemeColorAccent2
+        .ForeColor.Brightness = -0.5
+    End With
+    With ActiveSheet.Shapes("weekly").Fill
+        .Visible = msoFalse
+    End With
+        With ActiveSheet.Shapes("monthly").Fill
+        .Visible = msoFalse
+    End With
+    ActiveSheet.PivotTables("Tableau croisé dynamique1").PivotFields("Time").CurrentPage = "daily"
+    ActiveSheet.Shapes("TextBox 7").TextFrame2.TextRange.Font.Fill.ForeColor.ObjectThemeColor = msoThemeColorAccent2
+End Sub
+Sub monthly()
+    With ActiveSheet.Shapes("monthly").Fill
+        .Visible = msoTrue
+        .ForeColor.ObjectThemeColor = msoThemeColorAccent3
+        .ForeColor.Brightness = -0.5
+    End With
+    With ActiveSheet.Shapes("weekly").Fill
+        .Visible = msoFalse
+    End With
+        With ActiveSheet.Shapes("daily").Fill
+        .Visible = msoFalse
+    End With
+    ActiveSheet.PivotTables("Tableau croisé dynamique1").PivotFields("Time").CurrentPage = "monthly"
+    ActiveSheet.Shapes("TextBox 7").TextFrame2.TextRange.Font.Fill.ForeColor.ObjectThemeColor = msoThemeColorAccent3
+End Sub
