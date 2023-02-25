@@ -1,0 +1,111 @@
+Sub Donut()
+    Dim mch As ChartObject
+    Set mch = ActiveSheet.ChartObjects("Donutt")
+    Dim ms As Shape
+    Set ms = ActiveSheet.Shapes("Donut")
+
+    If Not mch.Chart.HasTitle Then
+        ms.ScaleWidth 4, msoFalse, msoScaleFromTopLeft
+        ms.ScaleHeight 4, msoFalse, msoScaleFromTopLeft
+            mch.Chart.HasTitle = True
+            mch.Chart.HasLegend = True
+            mch.Chart.Legend.Font.Color = vbWhite
+        mch.Chart.SeriesCollection(1).HasDataLabels = True
+            mch.Chart.SeriesCollection(1).DataLabels.Font.Color = vbBlack
+            mch.Chart.SeriesCollection(1).DataLabels.Font.Size = 18
+        mch.Chart.ChartTitle.Text = "Split per Team"
+        mch.Chart.ChartTitle.Font.Color = vbWhite
+    Else
+        ms.ScaleWidth 0.25, msoFalse, msoScaleFromTopLeft
+        ms.ScaleHeight 0.25, msoFalse, msoScaleFromTopLeft
+        mch.Chart.HasTitle = False
+        mch.Chart.HasLegend = False
+        mch.Chart.SeriesCollection(1).HasDataLabels = False
+    End If
+End Sub
+
+Sub Courbe()
+    Dim mch As ChartObject
+    Set mch = ActiveSheet.ChartObjects("Courbee")
+    Dim ms As Shape
+    Set ms = ActiveSheet.Shapes("Courbe")
+
+    If Not mch.Chart.HasTitle Then
+        ms.ScaleWidth 4, msoFalse, msoScaleFromTopLeft
+        ms.ScaleHeight 4, msoFalse, msoScaleFromTopLeft
+        mch.Chart.HasTitle = True
+        mch.Chart.HasLegend = True
+        mch.Chart.HasAxis(xlCategory) = True
+        mch.Chart.Axes(xlCategory).TickLabels.Font.Color = vbWhite
+        mch.Chart.Legend.Font.Color = vbWhite
+        mch.Chart.HasTitle = True
+        mch.Chart.ChartTitle.Text = "Weekly Trends"
+        mch.Chart.ChartTitle.Font.Color = vbWhite
+        mch.Chart.SeriesCollection(1).HasDataLabels = True
+        mch.Chart.SeriesCollection(1).DataLabels.Font.Color = vbWhite
+        mch.Chart.SeriesCollection(1).DataLabels.Font.Size = 12
+        mch.Chart.SeriesCollection(2).HasDataLabels = True
+        mch.Chart.SeriesCollection(2).DataLabels.Font.Color = vbWhite
+        mch.Chart.SeriesCollection(2).DataLabels.Font.Size = 12
+    Else
+        ms.ScaleWidth 0.25, msoFalse, msoScaleFromTopLeft
+        ms.ScaleHeight 0.25, msoFalse, msoScaleFromTopLeft
+        mch.Chart.HasTitle = False
+        mch.Chart.HasLegend = False
+        mch.Chart.HasAxis(xlCategory) = False
+        mch.Chart.SeriesCollection(1).HasDataLabels = False
+        mch.Chart.SeriesCollection(2).HasDataLabels = False
+    End If
+End Sub
+
+Sub Map()
+    Dim mch As ChartObject
+    Set mch = ActiveSheet.ChartObjects("Mapp")
+    Dim ms As Shape
+    Set ms = ActiveSheet.Shapes("Map")
+
+    If Not mch.Chart.HasTitle Then
+        mch.Chart.HasTitle = True
+        ms.ScaleWidth 4, msoFalse, msoScaleFromTopLeft
+        ms.ScaleHeight 4, msoFalse, msoScaleFromTopLeft
+        mch.Chart.SeriesCollection(1).HasDataLabels = True
+        mch.Chart.HasAxis(xlCategory) = True
+        mch.Chart.Axes(xlCategory).TickLabels.Font.Color = vbWhite
+        mch.Chart.SeriesCollection(1).DataLabels.Font.Color = vbWhite
+        mch.Chart.SeriesCollection(1).DataLabels.Font.Size = 12
+        mch.Chart.ChartTitle.Text = "Top 8 Items"
+        mch.Chart.ChartTitle.Font.Color = vbWhite
+    Else
+        ms.ScaleWidth 0.25, msoFalse, msoScaleFromTopLeft
+        ms.ScaleHeight 0.25, msoFalse, msoScaleFromTopLeft
+        mch.Chart.SeriesCollection(1).HasDataLabels = False
+        mch.Chart.HasAxis(xlCategory) = False
+        mch.Chart.HasTitle = False
+    End If
+End Sub
+
+Sub Chart()
+    Dim mch As ChartObject
+    Set mch = ActiveSheet.ChartObjects("Chartt")
+    Dim ms As Shape
+    Set ms = ActiveSheet.Shapes("Chart")
+
+    If Not mch.Chart.HasTitle Then
+        mch.Chart.HasTitle = True
+        ms.ScaleWidth 4, msoFalse, msoScaleFromTopLeft
+        ms.ScaleHeight 4, msoFalse, msoScaleFromTopLeft
+        mch.Chart.SeriesCollection(1).HasDataLabels = True
+        mch.Chart.HasAxis(xlCategory) = True
+        mch.Chart.Axes(xlCategory).TickLabels.Font.Color = vbWhite
+        mch.Chart.SeriesCollection(1).DataLabels.Font.Color = vbWhite
+        mch.Chart.SeriesCollection(1).DataLabels.Font.Size = 12
+        mch.Chart.ChartTitle.Text = "Team Size"
+        mch.Chart.ChartTitle.Font.Color = vbWhite
+    Else
+        ms.ScaleWidth 0.25, msoFalse, msoScaleFromTopLeft
+        ms.ScaleHeight 0.25, msoFalse, msoScaleFromTopLeft
+        mch.Chart.SeriesCollection(1).HasDataLabels = False
+        mch.Chart.HasAxis(xlCategory) = False
+        mch.Chart.HasTitle = False
+    End If
+End Sub
